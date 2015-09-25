@@ -1,6 +1,9 @@
 # jquery.TypedText Plugin
 A jQuery plugin that animates text in an element to make it seem as if it is being typed.
 
+# Download
+You can download the current release here: [Download Link](https://github.com/Droid047/jquery-typedText/archive/1.0.0.zip)
+
 # Usage
 ```html
 <html>
