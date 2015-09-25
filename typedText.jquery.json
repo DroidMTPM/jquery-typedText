@@ -1,8 +1,8 @@
 {
-    "name": "droidUIFX",
-    "version": "0.1.0",
-    "title": "Droid User Interface Effects",
-    "description": "A jQuery plugin that gives user's access to commonly used game UI effects such as typed text, etc.",
+    "name": "Typed Text",
+    "version": "1.0.0",
+    "title": "Typed Text Plug-In",
+    "description": "A jQuery plugin that animates text in an element to make it seem as if it is being typed.",
     "author":{
         "name": "Norberto Hernandez",
         "url": "https://github.com/Droid047"
