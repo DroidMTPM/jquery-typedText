@@ -1,0 +1,37 @@
+{
+    "name": "Typed Text",
+    "version": "1.0.0",
+    "title": "Typed Text Plug-In",
+    "description": "A jQuery plugin that animates text in an element to make it seem as if it is being typed.",
+    "author":{
+        "name": "Norberto Hernandez",
+        "url": "https://github.com/Droid047"
+    },
+    "maintainers": [
+        {
+            "name": "Norberto Hernandez",
+            "url": "https://github.com/Droid047"
+        }
+    ],
+    "license": "MIT License",
+    "dependencies": {
+        "jquery": "2.1.x"
+    },
+    "bugs": {
+        "url": "https://github.com/Droid047/jquery-typedText/issues"
+    },
+    "homepage": "https://github.com/Droid047/jquery-typedText/",
+    "docs": "https://github.com/Droid047/jquery-typedText/#readme",
+    "keywords": [
+        "TypedText",
+        "jquery",
+        "plugin",
+        "jquery-plugin"
+        "typed",
+        "text"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Droid047/jquery-typedText.git"
+    }
+}
