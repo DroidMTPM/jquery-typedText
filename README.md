@@ -1,2 +1,2 @@
-# jquery.droidUIFX
-A jQuery plugin that gives user's access to commonly used game UI effects such as typed text, etc.
+# jquery.TypedText
+A jQuery plugin that animates text in an element to make it seem as if it is being typed.
