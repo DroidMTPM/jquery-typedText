@@ -28,7 +28,11 @@
         "plugin",
         "jquery-plugin"
         "typed",
-        "text"
+        "text",
+        "ui",
+        "user-interface",
+        "user",
+        "interface"
     ],
     "repository": {
         "type": "git",
