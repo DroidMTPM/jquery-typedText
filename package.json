@@ -15,7 +15,7 @@
     ],
     "license": "MIT License",
     "dependencies": {
-        "jquery": "2.1.x"
+        "jquery": ">=1.4"
     },
     "bugs": {
         "url": "https://github.com/Droid047/jquery-typedText/issues"
@@ -26,7 +26,8 @@
         "TypedText",
         "jquery",
         "plugin",
-        "jquery-plugin"
+        "jquery-plugin",
+        "ecosystem:jquery",
         "typed",
         "text",
         "ui",
