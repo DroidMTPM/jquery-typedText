@@ -1,7 +1,6 @@
 /**
- * User Interface Typed Text jQuery Plug-In
- * @author Norberto Hernandez
- * @copyright 2015
+ * User Interface Typed Text plugin for jQuery v2.1.0
+ * Copyright (C) 2015 Norberto Hernandez
  **/
 (function($) {
     /**
@@ -27,8 +26,6 @@
                 default:
                     space = 66;
                 break;
-
-
                 case "slow":
                     space = 13;
                 break;
