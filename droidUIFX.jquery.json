@@ -1,0 +1,30 @@
+{
+    "name": "droidUIFX",
+    "version": "0.1.0",
+    "title": "Droid User Interface Effects",
+    "description": "A jQuery plugin that gives user's access to commonly used game UI effects such as typed text, etc.",
+    "author": [
+        {
+            "name": "Norberto Hernandez",
+            "url": "https://github.com/Droid047"
+        }
+    ],
+    "maintainers": [
+        {
+            "name": "Norberto Hernandez",
+            "url": "https://github.com/Droid047"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT License"
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">1.2"
+    },
+    "bugs": "https://github.com/Droid047/issues",
+    "homepage": "https://github.com/Droid047",
+    "docs": "https://github.com/Droid047#readme"
+}
