@@ -13,21 +13,24 @@
             "url": "https://github.com/Droid047"
         }
     ],
-    "license": "MIT License",
+    "licenses": [
+      {
+        "type": "MIT",
+        "url": "http://www.opensource.org/licenses/mit-license.php"
+      }
+    ],
     "dependencies": {
         "jquery": ">=1.4"
     },
-    "bugs": {
-        "url": "https://github.com/Droid047/jquery-typedText/issues"
-    },
+    "bugs": "url": "https://github.com/Droid047/jquery-typedText/issues",
     "homepage": "https://github.com/Droid047/jquery-typedText/",
     "docs": "https://github.com/Droid047/jquery-typedText/#readme",
+    "download": "https://github.com/Droid047/jquery-typedText/archive/1.0.0.zip",
     "keywords": [
         "TypedText",
         "jquery",
         "plugin",
-        "jquery-plugin",
-        "ecosystem:jquery",
+        "jquery-plugin"
         "typed",
         "text",
         "ui",
@@ -35,8 +38,4 @@
         "user",
         "interface"
     ],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/Droid047/jquery-typedText.git"
-    }
 }

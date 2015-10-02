@@ -1,79 +1,159 @@
 /**
- * User Interface Typed Text plugin for jQuery v2.1.0
+ * User Interface Typed Text plugin for jQuery v1.6.4 or >.
+ *
+ * Version: 1.1.0
+ *
  * Copyright (C) 2015 Norberto Hernandez
  **/
-(function($) {
+
+// the semi-colon before function invocation is a safety net against concatenated
+// scripts and/or other plugins which may not be closed properly.
+;(function($) {
     /**
      * @param text2Type - The text to animate.
      * @param space - the amount of milliseconds between each letter being displayed.
      **/
-    $.fn.typedText = function(text2Type, space) {
-        //check if the space variable is empty
-        if(typeof space !== "number" && typeof space !== "string") { space = 66; }
-        /**
-         * Otherwise we should check what the string variable "space" is equal to
-         * so our plug-in will respond appropriatley.
-         **/
-        else if(typeof space === "string") {
-            switch(space) {
-                //if the space var is equal to "fast"
-                case "fast":
-                    space = 99;
-                break;
-
-                //If the space var is equal to "medium"  or its not equal to any of the mentioned values.
-                case "medium":
-                default:
-                    space = 66;
-                break;
-                case "slow":
-                    space = 13;
-                break;
-            }
-        }
-
-        //store this element
-        var element = $(this);
-
-        //Clear the text from the element
-        element.html('');
-
-        //Store the string without html tags
-        var strippedText = text2Type.replace(/(<([^>]+)>)/ig, "");
-
-        //Store the size of the string that should be typed
-        var textLength = strippedText.length;
-
-        //Initialize the currentChar variable
-        var currentChar;
-
-        //Initialize the iterator variable.
-        var i = 0;
+    $.fn.typedText = function() {
 
         /**
-         * Set an interval that will display each one of letters
-         * in the string individually as if it were being typed.
+         * Proccess each given argument by determining what each argument
+         * is referring to. Also the plugin should only allow a minimum
+         * of 1 argument and a max of 3.
          **/
-        var typedTextInterval = setInterval(function() {
-            //Check if the string has not been fully printed.
-            if(i < (textLength - 1)) {
-                //Update the current character that should be printed.
-                currentChar = strippedText.charAt(i);
+        processArgs = function(args) {
+            //Store the number of arguments
+            var numOfArgs = args.length;
 
-                //Add the current character
-                element.html(element.html() + currentChar);
+            //Make sure that the amount of arguments is only 1-3
+            if(numOfArgs >= 1 && numOfArgs <= 3) {
+                //Set the "currentArg" & "argType" vars before the loop so it won't get initiated multiple times.
+                var currentArg;
+                var argType;
 
-                //increase the iterator
-                i++;
+                // Set the variable we're going to return at the end of the function.
+                // The variable will hold an object that will contain the given parameters
+                // if possible.
+                var givenArgs = {
+                    text2Type: "",
+                    space: 66,
+                    callback: ""
+                };
+
+                /**
+                 * Go through each argument and and check if it is valid for any
+                 * of the necessary parameters.
+                 **/
+                for(var i = 0; i < numOfArgs; i++) {
+                    //Store the argument
+                    currentArg = args[i];
+
+                    //Store the type of the argument
+                    argType = typeof currentArg;
+
+                    //Determine what variable we should assign this argument to.
+                    switch(argType) {
+                        case "string":
+                             //Check if the var that holds the desired text to animate has not been set.
+                             if(givenArgs.text2Type.length === 0) {
+                                givenArgs.text2Type = currentArg;
+                             }
+                        break;
+                        case "number":
+                             // Check if the var that holds the desired amount of time -- that should
+                             // pass between each letter being displayed -- has not been set yet
+                             if(givenArgs.space !== 66) {
+                                givenArgs.space = currentArg;
+                             }
+                        break;
+                        case "function":
+                             // Check if the var that holds the callback that should be executed upon
+                             // completion has not been set yet.
+                             if(givenArgs.callback === "") {
+                                givenArgs.callback = currentArg;
+                             }
+                        break;
+                        default:
+                    }
+                }
+
+                //Return all of the given parameters.
+                return givenArgs;
             }
-            //Otherwise the interval should be cleared.
+            //Otherwise stop the function.
             else {
-                clearInterval(typedTextInterval);
-
-                //update the text with any HTML styling now that its done being typed.
-                element.html(text2Type);
+                return false;
             }
-        }, space);
+        };
+
+        /**
+         * This function will be the function that actually animates the given
+         * string as if it is being typed out.
+         **/
+        var typeText = function(elementIdentifier, givenArgs) {
+            /**
+             * Check if the given arguments are invalid and if they are
+             * make sure to display an error on the developer's console
+             * instead of running the typedText function.
+             **/
+            if(!givenArgs) {
+                console.log("jQuery TypedText Plugin ERROR: Invalid argument(s).");
+            }
+            else {
+                //store this element
+                var element = $(elementIdentifier);
+
+                //Clear the text from the element
+                element.html('');
+
+                //Store the string without html tags
+                var strippedText = givenArgs.text2Type.replace(/(<([^>]+)>)/ig, "");
+
+                //Store the size of the string that should be typed
+                var textLength = strippedText.length;
+
+                //Initialize the currentChar variable
+                var currentChar;
+
+                // Initialize the iterator variable for the interval
+                // that will gradually display the whole string.
+                var i = 0;
+
+                /**
+                 * Set an interval that will display each one of the letters
+                 * in the string individually as if it were being typed.
+                 **/
+                var typedTextInterval = setInterval(function() {
+                    //Check if the string has not been fully printed.
+                    if(i < (textLength - 1)) {
+                        //Update the current character that should be printed.
+                        currentChar = strippedText.charAt(i);
+
+                        //Add the current character
+                        element.html(element.html() + currentChar);
+
+                        //increase the iterator
+                        i++;
+                    }
+                    //Otherwise the interval should be cleared.
+                    else {
+                        clearInterval(typedTextInterval);
+
+                        //update the text with any HTML styling now that its done being typed.
+                        element.html(givenArgs.text2Type);
+
+                        // Now that we finished displaying the text we'll check if the "callback" argument
+                        // is actually a function; if it is then we execute the function.
+                        if(typeof givenArgs.callback === "function") {
+                            givenArgs.callback();
+                        }
+                    }
+                }, givenArgs.space);
+            }
+        };
+
+        var processedArgs = processArgs(arguments);
+
+        typeText(this, processedArgs);
 
         //enable chaining
         return this;
