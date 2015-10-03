@@ -1,5 +1,8 @@
-# jQuery.TypedText Plugin
+# jQuery.TypedText
 A jQuery plugin that animates text in an element to make it seem as if it is being typed.
+
+# Version
+1.1.0
 
 # Usage
 ```html
@@ -16,13 +19,25 @@ A jQuery plugin that animates text in an element to make it seem as if it is bei
     <script type="text/javascript">
       $(document).ready(function() {
         /**
-         * The second parameter could either be a string (Possible values: slow, medium, fast),
-         * an integer, or it could be left blank and in that case the amount of milliseconds that 
-         * will pass before typing the upcoming letter will be 66.
+         * The plugin takes 1 to 3 arguments; If only one argument is supplied it must be
+         * a string. Or you could choose to customize the plugin's effect even further by
+         * also using either or both of the other possible parameters.
+         *
+         * @param [string] - The text to animate the plugin should animate.
+         * @param [int] - The amount of milliseconds between each letter being displayed. [OPTIONAL]
+         * @param [function] - The function you would like the plugin to execute upon
+         *                     successful completion of the text animation.
          **/
-        $("#MyTypedText").typedText("This text will now be typed.", "slow");
+        $("#MyTypedText").typedText("This text was just typed!", 100, function() {
+        	alert("The plugin has successfully typed the given text.");
+        });
       });
     </script>
   </body>
 </html>
 ```
+
+# Example
+If you'd like to try a working example you could visit the following link:
+https://jsfiddle.net/Droid047/40tovd7q/
+
