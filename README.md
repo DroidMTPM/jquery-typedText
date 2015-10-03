@@ -4,6 +4,10 @@ A jQuery plugin that animates text in an element to make it seem as if it is bei
 # Version
 1.1.0
 
+#Download
+You can download the latest version at the following link:
+https://github.com/Droid047/jquery-typedText/releases/latest
+
 # Usage
 ```html
 <html>
