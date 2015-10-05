@@ -1,5 +1,8 @@
 # jQuery.TypedText
+[![Build Status](https://travis-ci.org/Droid047/jquery-typedText.svg?branch=master)](https://travis-ci.org/Droid047/jquery-typedText)
+
 A jQuery plugin that animates text in an element to make it seem as if it is being typed.
+
 
 # Version
 1.1.0
@@ -44,4 +47,3 @@ https://github.com/Droid047/jquery-typedText/releases/latest
 # Example
 If you'd like to try a working example you could visit the following link:
 https://jsfiddle.net/Droid047/40tovd7q/
-
