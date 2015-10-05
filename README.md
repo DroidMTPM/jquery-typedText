@@ -5,7 +5,7 @@ A jQuery plugin that animates text in an element to make it seem as if it is bei
 
 
 # Version
-1.1.0
+1.1.1
 
 #Download
 You can download the latest version at the following link:
