@@ -10,8 +10,14 @@
 // scripts and/or other plugins which may not be closed properly.
 ;(function($) {
     /**
-     * @param text2Type - The text to animate.
-     * @param space - the amount of milliseconds between each letter being displayed.
+     * The plugin takes 1 to 3 arguments; If only one argument is supplied it must be
+     * a string. Or you could choose to customize the plugin's effect even further by
+     * also using either or both of the other possible parameters.
+     *
+     * @param [string] - The text to animate the plugin should animate.
+     * @param [int] - The amount of milliseconds between each letter being displayed. [OPTIONAL]
+     * @param [function] - The function you would like the plugin to execute upon
+     *                     successful completion of the text animation.
      **/
     $.fn.typedText = function() {
 
