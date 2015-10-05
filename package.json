@@ -18,10 +18,10 @@
         "jquery": ">=1.4"
     },
     "bugs": {
-        "url": "https://github.com/Droid047/jquery-typedText/issues"
+        "url": "https://github.com/Droid047/jquery-typedText/issues",
+        "email": "n1a1hernandez@gmail.com"
     },
-    "homepage": "https://github.com/Droid047/jquery-typedText/",
-    "docs": "https://github.com/Droid047/jquery-typedText/#readme",
+    "homepage": "https://github.com/Droid047/jquery-typedText/",\
     "keywords": [
         "TypedText",
         "jquery",
