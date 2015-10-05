@@ -33,7 +33,8 @@
         "ui",
         "user-interface",
         "user",
-        "interface"
+        "interface",
+        "front-end"
     ],
     "repository": {
         "type": "git",
