@@ -1,7 +1,7 @@
 /**
  * User Interface Typed Text plugin for jQuery v1.6.4 or >.
  *
- * Version: 1.1.0
+ * Version: 1.1.1
  *
  * Copyright (C) 2015 Norberto Hernandez
  **/

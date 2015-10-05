@@ -1,43 +1,43 @@
 {
-    "name": "typed-text",
-    "version": "1.1.0",
-    "title": "Typed Text [jQuery Plugin]",
-    "description": "A jQuery plugin that animates text in an element to make it seem as if it is being typed.",
-    "author":{
-        "name": "Norberto Hernandez",
-        "url": "https://github.com/Droid047"
-    },
-    "maintainers": [
-        {
-            "name": "Norberto Hernandez",
-            "url": "https://github.com/Droid047"
-        }
-    ],
-    "license": "MIT License",
-    "dependencies": {
-        "jquery": ">=1.4"
-    },
-    "bugs": {
-        "url": "https://github.com/Droid047/jquery-typedText/issues",
-        "email": "n1a1hernandez@gmail.com"
-    },
-    "homepage": "https://github.com/Droid047/jquery-typedText/",
-    "keywords": [
-        "TypedText",
-        "jquery",
-        "plugin",
-        "jquery-plugin",
-        "ecosystem:jquery",
-        "typed",
-        "text",
-        "ui",
-        "user-interface",
-        "user",
-        "interface",
-        "front-end"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/Droid047/jquery-typedText.git"
+  "name": "typed-text",
+  "version": "1.1.1",
+  "title": "Typed Text [jQuery Plugin]",
+  "description": "A jQuery plugin that animates text in an element to make it seem as if it is being typed.",
+  "author": {
+    "name": "Norberto Hernandez",
+    "url": "https://github.com/Droid047"
+  },
+  "maintainers": [
+    {
+      "name": "Norberto Hernandez",
+      "url": "https://github.com/Droid047"
     }
+  ],
+  "license": "MIT License",
+  "dependencies": {
+    "jquery": ">=1.4"
+  },
+  "bugs": {
+    "url": "https://github.com/Droid047/jquery-typedText/issues",
+    "email": "n1a1hernandez@gmail.com"
+  },
+  "homepage": "https://github.com/Droid047/jquery-typedText/",
+  "keywords": [
+    "TypedText",
+    "jquery",
+    "plugin",
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "typed",
+    "text",
+    "ui",
+    "user-interface",
+    "user",
+    "interface",
+    "front-end"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Droid047/jquery-typedText.git"
+  }
 }
