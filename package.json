@@ -1,7 +1,7 @@
 {
-    "name": "Typed Text",
+    "name": "typed-text",
     "version": "1.1.0",
-    "title": "Typed Text Plug-In",
+    "title": "Typed Text [jQuery Plugin]",
     "description": "A jQuery plugin that animates text in an element to make it seem as if it is being typed.",
     "author":{
         "name": "Norberto Hernandez",
