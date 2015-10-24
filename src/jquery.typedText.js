@@ -67,7 +67,7 @@
                         case "number":
                              // Check if the var that holds the desired amount of time -- that should
                              // pass between each letter being displayed -- has not been set yet
-                             if(givenArgs.space !== 66) {
+                             if(givenArgs.space !== currentArg) {
                                 givenArgs.space = currentArg;
                              }
                         break;
