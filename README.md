@@ -5,7 +5,7 @@ A jQuery plugin that animates text in an element to make it seem as if it is bei
 
 
 # Version
-1.1.1
+1.2.2
 
 #Download
 You can download the latest version at the following link:
@@ -26,9 +26,11 @@ https://github.com/Droid047/jquery-typedText/releases/latest
     <script type="text/javascript">
       $(document).ready(function() {
         /**
-         * The plugin takes 1 to 3 arguments; If only one argument is supplied it must be
-         * a string. Or you could choose to customize the plugin's effect even further by
-         * also using either or both of the other possible parameters.
+         * The plugin takes 0 to 3 arguments; If only one argument is supplied it must be
+         * a string; if no arguments are supplied the plugin will attempt to get the
+         * text from within the selector element. Or you could choose to customize the
+         * plugin's effect even further by also using either or both of
+         * the other possible parameters.
          *
          * @param [string] - The text to animate the plugin should animate.
          * @param [int] - The amount of milliseconds between each letter being displayed. [OPTIONAL]
@@ -46,4 +48,4 @@ https://github.com/Droid047/jquery-typedText/releases/latest
 
 # Example
 If you'd like to try a working example you could visit the following link:
-https://jsfiddle.net/Droid047/40tovd7q/
+https://jsfiddle.net/Droid047/ovyvequh/

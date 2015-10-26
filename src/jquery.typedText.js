@@ -1,7 +1,7 @@
 /**
  * User Interface Typed Text plugin for jQuery v1.6.4 or >.
  *
- * Version: 1.1.1
+ * Version: 1.2.2
  *
  * Copyright (C) 2015 Norberto Hernandez
  **/
@@ -10,9 +10,11 @@
 // scripts and/or other plugins which may not be closed properly.
 ;(function($) {
     /**
-     * The plugin takes 1 to 3 arguments; If only one argument is supplied it must be
-     * a string. Or you could choose to customize the plugin's effect even further by
-     * also using either or both of the other possible parameters.
+     * The plugin takes 0 to 3 arguments; If only one argument is supplied it must be
+     * a string; if no arguments are supplied the plugin will attempt to get the
+     * text from within the selector element. Or you could choose to customize the
+     * plugin's effect even further by also using either or both of
+     * the other possible parameters.
      *
      * @param [string] - The text to animate the plugin should animate.
      * @param [int] - The amount of milliseconds between each letter being displayed. [OPTIONAL]
@@ -20,30 +22,30 @@
      *                     successful completion of the text animation.
      **/
     $.fn.typedText = function() {
+        var $this = $(this);
 
         /**
          * Proccess each given argument by determining what each argument
-         * is referring to. Also the plugin should only allow a minimum
-         * of 1 argument and a max of 3.
+         * is referring to.
          **/
-        processArgs = function(args) {
+        var processArgs = function(args) {
             //Store the number of arguments
             var numOfArgs = args.length;
+
+            // Set the variable we're going to return at the end of the function.
+            // The variable will hold an object that will contain the given parameters
+            // if possible.
+            var givenArgs = {
+                text2Type: "",
+                space: 63,
+                callback: ""
+            };
 
             //Make sure that the amount of arguments is only 1-3
             if(numOfArgs >= 1 && numOfArgs <= 3) {
                 //Set the "currentArg" & "argType" vars before the loop so it won't get initiated multiple times.
                 var currentArg;
                 var argType;
-
-                // Set the variable we're going to return at the end of the function.
-                // The variable will hold an object that will contain the given parameters
-                // if possible.
-                var givenArgs = {
-                    text2Type: "",
-                    space: 66,
-                    callback: ""
-                };
 
                 /**
                  * Go through each argument and and check if it is valid for any
@@ -65,11 +67,7 @@
                              }
                         break;
                         case "number":
-                             // Check if the var that holds the desired amount of time -- that should
-                             // pass between each letter being displayed -- has not been set yet
-                             if(givenArgs.space !== 66) {
-                                givenArgs.space = currentArg;
-                             }
+                             givenArgs.space = currentArg;
                         break;
                         case "function":
                              // Check if the var that holds the callback that should be executed upon
@@ -84,6 +82,21 @@
 
                 //Return all of the given parameters.
                 return givenArgs;
+            }
+            /**
+             * If the function was given no arguments attempt to retieve
+             * the text that should be typed out.
+             **/
+            else if(numOfArgs === 0) {
+                //Check if the selector has html inside
+                if($this.html().length != 0) {
+                    givenArgs.text2Type = $this.html();
+
+                    return givenArgs;
+                } else {
+                    //Return false because there was no text to type.
+                    return false;
+                }
             }
             //Otherwise stop the function.
             else {
@@ -103,6 +116,7 @@
              **/
             if(!givenArgs) {
                 console.log("jQuery TypedText Plugin ERROR: Invalid argument(s).");
+                return false;
             }
             else {
                 //store this element
@@ -154,6 +168,8 @@
                         }
                     }
                 }, givenArgs.space);
+
+                return true;
             }
         };
 
